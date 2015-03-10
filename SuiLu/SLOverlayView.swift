@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SLOverlayView: UIView {
+class SLOverlayView: UIView, SLMediaPlayerDelegate {
 
 }

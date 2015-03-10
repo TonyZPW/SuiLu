@@ -35,19 +35,33 @@ class SLMediaController: UIViewController, SLMediaPlayerConTrolDelegate {
     
     
     func prepareToPlay(){
-        var keys = ["tracks","duration","commonMetadata","availableMediaCharacteristicsWithMediaSelectionOptions"]
         if let asset = self.asset{
+            var keys = ["tracks","duration","commonMetadata","availableMediaCharacteristicsWithMediaSelectionOptions"]
             self.playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: keys)
             
+            self.playerItem?.addObserver(self, forKeyPath: "status", options: .New, context: nil)
             
             self.player = AVPlayer(playerItem: self.playerItem)
             
+            self.playerView = SLPlayerView(player: self.player!)
+            
+            self.transport = self.playerView?.transport
+            
+            self.transport?.delegate = self
+            
         }
-        
-        
-        
+    }
     
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+            self.playerItem?.removeObserver(self, forKeyPath: "status")
+            if(self.playerItem?.status == .ReadyToPlay){
+//                var duration = self.playerItem.duration;
+                self.player?.play()
+            }
+        })
     }
     
     
