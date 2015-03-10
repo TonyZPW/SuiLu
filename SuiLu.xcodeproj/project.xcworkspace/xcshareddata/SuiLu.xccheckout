@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EB025F85-5529-43E5-B2CE-7CFAE4EBF4D0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SuiLu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>21D9E1769D9BEA1B7116165F4C34DE38B5F8856F</key>
+		<string>https://github.com/TonyZPW/SuiLu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SuiLu.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>21D9E1769D9BEA1B7116165F4C34DE38B5F8856F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/TonyZPW/SuiLu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>21D9E1769D9BEA1B7116165F4C34DE38B5F8856F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>21D9E1769D9BEA1B7116165F4C34DE38B5F8856F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SuiLu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

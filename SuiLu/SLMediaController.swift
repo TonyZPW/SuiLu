@@ -33,7 +33,7 @@ class SLMediaController: UIViewController, SLMediaPlayerConTrolDelegate {
         super.init()
     }
     
-    
+        
     func prepareToPlay(){
         if let asset = self.asset{
             var keys = ["tracks","duration","commonMetadata","availableMediaCharacteristicsWithMediaSelectionOptions"]
