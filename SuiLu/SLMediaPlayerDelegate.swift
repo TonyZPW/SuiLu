@@ -24,8 +24,6 @@ import UIKit
 
 @objc protocol SLMediaPlayerDelegate{
     
-   var delegate: SLMediaPlayerConTrolDelegate{get set}
-    
     func setTitle(title: String)
     func setCurrentTime(time: NSTimeInterval, duration:NSTimeInterval)
     func setScrubbingTime(time: NSTimeInterval)

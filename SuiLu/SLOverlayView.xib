@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLPlayerView" customModule="SuiLu" customModuleProvider="target"/>
@@ -10,6 +10,22 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaO-5I-hjj" userLabel="FilmStripView" customClass="SLFilmStripView" customModule="SuiLu" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="-99" width="360" height="99"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOA-h1-afj">
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="99"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gOA-h1-afj" firstAttribute="top" secondItem="yaO-5I-hjj" secondAttribute="top" id="H4f-KN-dwZ"/>
+                        <constraint firstAttribute="trailing" secondItem="gOA-h1-afj" secondAttribute="trailing" id="IdU-vd-3LT"/>
+                        <constraint firstAttribute="bottom" secondItem="gOA-h1-afj" secondAttribute="bottom" id="UFv-49-Ryf"/>
+                        <constraint firstAttribute="height" constant="99" id="eS9-9e-FWJ"/>
+                        <constraint firstItem="gOA-h1-afj" firstAttribute="leading" secondItem="yaO-5I-hjj" secondAttribute="leading" id="mYC-Ux-Q26"/>
+                    </constraints>
+                </view>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-yt-uwf">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
                     <constraints>
@@ -17,12 +33,19 @@
                     </constraints>
                     <items>
                         <navigationItem title="Title" id="3Hu-Wi-O8Z">
-                            <barButtonItem key="leftBarButtonItem" title="Done" id="RGt-ur-wti"/>
+                            <barButtonItem key="leftBarButtonItem" title="Done" id="RGt-ur-wti">
+                                <connections>
+                                    <action selector="closeWindow:" destination="iN0-l3-epB" id="hqE-pW-wQn"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" style="plain" id="Yvh-rF-VVJ">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aix-lN-RuM">
                                     <rect key="frame" x="414" y="5" width="45" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Show"/>
+                                    <connections>
+                                        <action selector="toggleFilmstripButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="9Aw-Ad-i5C"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                         </navigationItem>
@@ -37,12 +60,17 @@
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ZRP-yR-w0M"/>
                         <barButtonItem style="plain" id="de1-Hl-arX">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nYL-Vg-u4M">
-                                <rect key="frame" x="177" y="7" width="32" height="32"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nYL-Vg-u4M">
+                                <rect key="frame" x="16" y="10" width="21" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="play_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="pause_button"/>
+                                <connections>
+                                    <action selector="togglePlayback:" destination="iN0-l3-epB" eventType="touchUpInside" id="fNO-G5-0yI"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="A7w-Jl-4xU"/>
@@ -83,15 +111,15 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="aVm-Z8-PUB"/>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j04-sr-52I">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j04-sr-52I" userLabel="InfoView">
                     <rect key="frame" x="95" y="241" width="83" height="33"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9B-N8-Wt9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tp_info_popup" translatesAutoresizingMaskIntoConstraints="NO" id="T9B-N8-Wt9" customClass="info_popup">
                             <rect key="frame" x="0.0" y="0.0" width="83" height="33"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9M-0u-4kW">
-                            <rect key="frame" x="20" y="6" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9M-0u-4kW">
+                            <rect key="frame" x="21" y="4" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -103,11 +131,15 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="YFV-yt-uwf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1br-pK-Kkc"/>
+                <constraint firstItem="yaO-5I-hjj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-99" id="Ldg-NV-X1b"/>
                 <constraint firstItem="YFV-yt-uwf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UwF-kP-QT3"/>
                 <constraint firstAttribute="trailing" secondItem="g4H-HN-0jA" secondAttribute="trailing" id="aWI-WO-Udx"/>
+                <constraint firstItem="yaO-5I-hjj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="box-dA-Ttb"/>
                 <constraint firstAttribute="trailing" secondItem="YFV-yt-uwf" secondAttribute="trailing" id="cxt-ud-crH"/>
+                <constraint firstAttribute="trailing" secondItem="yaO-5I-hjj" secondAttribute="trailing" constant="120" id="eMA-sK-w27"/>
                 <constraint firstAttribute="bottom" secondItem="g4H-HN-0jA" secondAttribute="bottom" id="hRR-SO-3Bk"/>
                 <constraint firstItem="g4H-HN-0jA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iXh-So-ZzE"/>
                 <constraint firstItem="g4H-HN-0jA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jRc-w6-a0U"/>
@@ -119,6 +151,30 @@
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="currentTimeL" destination="XrZ-lq-fwU" id="vUu-94-5pz"/>
+                <outlet property="filmStripView" destination="yaO-5I-hjj" id="Wly-LJ-sG9"/>
+                <outlet property="filmstripToggleButton" destination="Aix-lN-RuM" id="EDf-CT-fIG"/>
+                <outlet property="infoView" destination="j04-sr-52I" id="m8H-2X-eYX"/>
+                <outlet property="navigationBar" destination="YFV-yt-uwf" id="re0-RS-4hd"/>
+                <outlet property="remainingL" destination="hyX-uq-nXT" id="Uh1-vn-RxF"/>
+                <outlet property="scrubTimeLine" destination="y9M-0u-4kW" id="LO5-qn-Zpx"/>
+                <outlet property="slider" destination="gYM-5V-ldM" id="zZl-ic-QCQ"/>
+                <outlet property="togglePlayButton" destination="nYL-Vg-u4M" id="ub0-hm-nRS"/>
+                <outlet property="toolbar" destination="g4H-HN-0jA" id="Vyf-1L-2bs"/>
+                <outletCollection property="gestureRecognizers" destination="OQf-Tw-Egr" appends="YES" id="ieN-Jn-oqp"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="OQf-Tw-Egr">
+            <connections>
+                <action selector="toggleControls:" destination="iN0-l3-epB" id="hUx-Xl-h5h"/>
+                <outlet property="delegate" destination="iN0-l3-epB" id="GGv-GK-TAB"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="pause_button" width="19" height="21"/>
+        <image name="play_button" width="21" height="24"/>
+        <image name="tp_info_popup" width="83" height="33"/>
+    </resources>
 </document>

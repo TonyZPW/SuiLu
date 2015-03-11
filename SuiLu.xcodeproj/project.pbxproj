@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D341812B1AB00EF500F51CD9 /* AVAssetAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341812A1AB00EF500F51CD9 /* AVAssetAddition.swift */; };
+		D341812D1AB0276C00F51CD9 /* SLThumbNail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341812C1AB0276C00F51CD9 /* SLThumbNail.swift */; };
+		D341812F1AB02A6B00F51CD9 /* SLThumbnailGeneratedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341812E1AB02A6B00F51CD9 /* SLThumbnailGeneratedNotification.swift */; };
+		D34181311AB038FF00F51CD9 /* SLFilmStripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34181301AB038FF00F51CD9 /* SLFilmStripView.swift */; };
+		D34181331AB0402600F51CD9 /* SLSubtitleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34181321AB0402600F51CD9 /* SLSubtitleController.swift */; };
 		E6A429FB1AAF2303009F4085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A429FA1AAF2303009F4085 /* AppDelegate.swift */; };
 		E6A429FE1AAF2303009F4085 /* SuiLu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6A429FC1AAF2303009F4085 /* SuiLu.xcdatamodeld */; };
 		E6A42A001AAF2303009F4085 /* SLHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A429FF1AAF2303009F4085 /* SLHomeController.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D341812A1AB00EF500F51CD9 /* AVAssetAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetAddition.swift; sourceTree = "<group>"; };
+		D341812C1AB0276C00F51CD9 /* SLThumbNail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLThumbNail.swift; sourceTree = "<group>"; };
+		D341812E1AB02A6B00F51CD9 /* SLThumbnailGeneratedNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLThumbnailGeneratedNotification.swift; sourceTree = "<group>"; };
+		D34181301AB038FF00F51CD9 /* SLFilmStripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFilmStripView.swift; sourceTree = "<group>"; };
+		D34181321AB0402600F51CD9 /* SLSubtitleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLSubtitleController.swift; sourceTree = "<group>"; };
 		E6A429F51AAF2303009F4085 /* SuiLu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuiLu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A429F91AAF2303009F4085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A429FA1AAF2303009F4085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D34181271AB00E3F00F51CD9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D341812A1AB00EF500F51CD9 /* AVAssetAddition.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		E6A429EC1AAF2303009F4085 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +167,7 @@
 		E6A42A211AAF2625009F4085 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				D34181271AB00E3F00F51CD9 /* Category */,
 				E6A42A241AAF2650009F4085 /* View */,
 				E6A42A231AAF2643009F4085 /* Controller */,
 				E6A42A221AAF263B009F4085 /* Model */,
@@ -160,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				E6A42A2A1AAF3598009F4085 /* SLMediaPlayerDelegate.swift */,
+				D341812C1AB0276C00F51CD9 /* SLThumbNail.swift */,
+				D341812E1AB02A6B00F51CD9 /* SLThumbnailGeneratedNotification.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,7 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				E6A42A2C1AAF3E98009F4085 /* SLPlayerView.swift */,
+				D34181301AB038FF00F51CD9 /* SLFilmStripView.swift */,
 				E6A42A2E1AAF446B009F4085 /* SLOverlayView.swift */,
+				D34181321AB0402600F51CD9 /* SLSubtitleController.swift */,
 				E6A42A301AAF4498009F4085 /* SLOverlayView.xib */,
 			);
 			name = View;
@@ -306,13 +329,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34181331AB0402600F51CD9 /* SLSubtitleController.swift in Sources */,
 				E6A42A001AAF2303009F4085 /* SLHomeController.swift in Sources */,
 				E6A429FE1AAF2303009F4085 /* SuiLu.xcdatamodeld in Sources */,
 				E6A42A2F1AAF446B009F4085 /* SLOverlayView.swift in Sources */,
+				D341812D1AB0276C00F51CD9 /* SLThumbNail.swift in Sources */,
+				D34181311AB038FF00F51CD9 /* SLFilmStripView.swift in Sources */,
+				D341812B1AB00EF500F51CD9 /* AVAssetAddition.swift in Sources */,
 				E6A42A2D1AAF3E98009F4085 /* SLPlayerView.swift in Sources */,
 				E6A42A291AAF2CEE009F4085 /* SLMediaController.swift in Sources */,
 				E6A429FB1AAF2303009F4085 /* AppDelegate.swift in Sources */,
 				E6A42A2B1AAF3598009F4085 /* SLMediaPlayerDelegate.swift in Sources */,
+				D341812F1AB02A6B00F51CD9 /* SLThumbnailGeneratedNotification.swift in Sources */,
 				E6A42A1E1AAF258A009F4085 /* SLPlayMediaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +533,7 @@
 				E6A42A191AAF2304009F4085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6A42A1A1AAF2304009F4085 /* Build configuration list for PBXNativeTarget "SuiLuTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +542,7 @@
 				E6A42A1C1AAF2304009F4085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

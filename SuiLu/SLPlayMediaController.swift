@@ -18,9 +18,9 @@ class SLPlayMediaController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var preview = self.mediaController.view
-        preview.frame = self.view.frame
-        self.view.addSubview(preview)
+        var preview = self.mediaController.playerView
+        preview!.frame = self.view.frame
+        self.view.addSubview(preview!)
     }
     
     override func prefersStatusBarHidden() -> Bool {

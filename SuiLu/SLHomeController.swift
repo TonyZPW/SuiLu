@@ -15,12 +15,10 @@ class SLHomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     
@@ -34,15 +32,16 @@ class SLHomeController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "play"){
             
-            var playMC = segue.destinationViewController as SLPlayMediaController
+            var playMC = segue.destinationViewController as! SLPlayMediaController
             
             if let localUrl = self.localURL{
                 playMC.assetURL? = localUrl
             }
         }
-        
     }
 
+    
+    
 
 }
 

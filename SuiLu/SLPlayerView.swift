@@ -26,7 +26,7 @@ class SLPlayerView: UIView {
         self.backgroundColor = UIColor.blackColor()
         self.autoresizingMask = .FlexibleHeight | .FlexibleWidth
         
-        (self.layer as AVPlayerLayer).player = player
+        (self.layer as! AVPlayerLayer).player = player
             
        self.overlayView = NSBundle.mainBundle().loadNibNamed("SLOverlayView", owner: self, options: nil)[0] as? SLOverlayView
         
